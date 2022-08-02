@@ -1,0 +1,61 @@
+/* VARIABLES */
+@import './colors';
+
+/* SITE */
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-family: 'Manrope', sans-serif;
+	min-height: 100vh;
+	background: url('../images/bg-pattern.svg') no-repeat $very-pale-blue_main_background;
+	margin: auto 2.5rem;
+	text-align: center;
+}
+
+/* SECTION */
+
+.heading {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 14.5rem;
+	margin-top: 5.5rem;
+	background: url('../images/pattern-circles.svg') center no-repeat;
+
+	&__main {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		color: $dark-desaturated-blue_text_n_CTA_background;
+	}
+
+	&__text {
+		font-size: 1.3rem;
+		width: 55%;
+		color: $grayish-blue_text;
+	}
+}
+
+.trial-card {
+	margin-top: 3.3rem;
+	background-color: $white_pricing_component_background;
+}
+
+/* HOVERS */
+
+/* MEDIA QUERIES */
+
+@media (min-width: 420px) {
+}
