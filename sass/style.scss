@@ -19,7 +19,7 @@ html {
 body {
 	font-family: 'Manrope', sans-serif;
 	min-height: 100vh;
-	background: url('../images/bg-pattern.svg') no-repeat $very-pale-blue_main_background;
+	background: url('../images/bg-pattern.svg') no-repeat $main_background;
 	margin: auto 2.5rem;
 	text-align: center;
 }
@@ -38,22 +38,185 @@ body {
 	&__main {
 		font-size: 2rem;
 		margin-bottom: 1rem;
-		color: $dark-desaturated-blue_text_n_CTA_background;
+		color: $text_n_CTA_background;
 	}
 
 	&__text {
 		font-size: 1.3rem;
 		width: 55%;
-		color: $grayish-blue_text;
+		color: $text;
 	}
 }
 
 .trial-card {
 	margin-top: 3.3rem;
-	background-color: $white_pricing_component_background;
+	border-radius: 1rem;
+	background-color: $pricing_component_background;
+	box-shadow: 0px 0px 10px 0px rgba(66, 68, 90, 0.3);
+}
+
+.slidecontainer {
+	display: flex;
+	flex-direction: column;
+	padding: 4rem 2.5rem;
+	color: $text;
+
+	&__pageviews {
+		font-size: 1.3rem;
+		font-weight: 800;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+	}
+
+	&__slider {
+		appearance: none;
+		height: 1rem;
+		margin: 4rem 0 3.5rem;
+		border-radius: 100vmax;
+		background-color: $light-grayish-blue_empty_slider_bar;
+	}
+
+	&__slider::-webkit-slider-thumb {
+		appearance: none;
+		width: 4rem;
+		height: 4rem;
+		background: url('../images/icon-slider.svg');
+		cursor: pointer;
+	}
+
+	// need to repair my slider thumb
+
+	&__price {
+		font-size: 3rem;
+		font-weight: 800;
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		color: $text_n_CTA_background;
+
+		&--period {
+			font-size: 1.3rem;
+			font-weight: 600;
+			align-self: center;
+			color: $text;
+		}
+	}
+}
+
+.price-switch {
+	display: flex;
+	align-items: center;
+	padding-bottom: 4rem;
+	border-bottom: 3px solid $main_background;
+
+	&__text {
+		display: flex;
+		justify-content: flex-end;
+		flex-grow: 1;
+		flex-basis: 0;
+		font-size: 1.2rem;
+		text-transform: capitalize;
+		color: $text;
+
+		&--discount {
+			display: inline-block;
+			padding: 0 0.5rem;
+			border-radius: 100vmax;
+			margin-left: 0.5rem;
+			color: $discount_text;
+			background-color: $discount_text_background;
+		}
+	}
+
+	&__text:nth-of-type(2) {
+		justify-content: flex-start;
+	}
+
+	&__switch {
+		position: relative;
+		width: 4.4rem;
+		height: 2.2rem;
+		border-radius: 100vmax;
+		margin: 0 1rem;
+		background-color: $toggle_background;
+		transition: background-color 0.5s;
+		cursor: pointer;
+
+		&--input {
+			height: 0.5rem;
+			width: 0.5rem;
+			opacity: 0;
+		}
+
+		&--knob {
+			position: absolute;
+			top: 0.35rem;
+			left: 0.45rem;
+			width: 1.5rem;
+			height: 1.5rem;
+			border-radius: 50%;
+			background-color: $pricing_component_background;
+			transition: transform 0.5s;
+		}
+	}
+}
+
+.price-switch__switch--input:checked + .price-switch__switch--knob {
+	transform: translate3d(2rem, 0, 0);
+}
+
+.trial-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__textbox {
+		margin: 2rem 0 2.5rem;
+
+		&--offer {
+			font-size: 1.2rem;
+			color: $text;
+			margin: 1rem;
+		}
+
+		&--offer img {
+			margin-right: 1.5rem;
+		}
+	}
+
+	&__button {
+		font-family: 'Manrope', sans-serif;
+		font-size: 1.3rem;
+		font-weight: 800;
+		width: 17rem;
+		height: 4rem;
+		border: none;
+		border-radius: 100vmax;
+		margin-bottom: 3.3rem;
+		color: $pale-blue_CTA_text;
+		background-color: $text_n_CTA_background;
+		transition: color 0.5s;
+		cursor: pointer;
+	}
+}
+
+footer {
+	margin-top: 1rem;
 }
 
 /* HOVERS */
+
+.price-switch {
+	&__switch:hover {
+		background-color: $soft-cyan_full_slider_bar;
+	}
+}
+
+.trial-info {
+	&__button:hover {
+		color: $pricing_component_background;
+	}
+}
 
 /* MEDIA QUERIES */
 
