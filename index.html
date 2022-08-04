@@ -24,11 +24,10 @@
 			<div class="trial-card">
 				<div class="slidecontainer">
 					<label class="slidecontainer__pageviews" for="priceRang">100K pageviews</label>
-					<input type="range" min="8" max="36" value="16" name="pricing" id="priceRange"
-						class="slidecontainer__slider">
-					<!-- <img src="./images/icon-slider.svg" alt="">	 -->
-					<p class="slidecontainer__price">$16.00 <span class="slidecontainer__price--period">/ month</span>
-					</p>
+					<input type="range" min="0" max="4" value="0" step="1" name="pricing" id="priceRange"
+						class="slidecontainer__slider" aria-valuetext="value">
+					<span class="slidecontainer__price"></span><span class="slidecontainer__price--period">/
+						month</span>
 				</div>
 
 				<div class="price-switch">
@@ -40,7 +39,7 @@
 						</span>
 					</label>
 					<span class="price-switch__text">yearly billing <span
-							class="price-switch__text--discount">-25%</span></span>
+							class="price-switch__text--discount"></span></span>
 				</div>
 
 				<div class="trial-info">

@@ -36,7 +36,7 @@ body {
 	background: url('../images/pattern-circles.svg') center no-repeat;
 
 	&__main {
-		font-size: 2rem;
+		font-size: clamp(2rem, 5vw, 2.4rem);
 		margin-bottom: 1rem;
 		color: $text_n_CTA_background;
 	}
@@ -49,7 +49,8 @@ body {
 }
 
 .trial-card {
-	margin-top: 3.3rem;
+	max-width: 54.5rem;
+	margin: 3.3rem auto 0;
 	border-radius: 1rem;
 	background-color: $pricing_component_background;
 	box-shadow: 0px 0px 10px 0px rgba(66, 68, 90, 0.3);
@@ -57,7 +58,9 @@ body {
 
 .slidecontainer {
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
 	padding: 4rem 2.5rem;
 	color: $text;
 
@@ -69,6 +72,7 @@ body {
 	}
 
 	&__slider {
+		width: 100%;
 		appearance: none;
 		height: 1rem;
 		margin: 4rem 0 3.5rem;
@@ -76,28 +80,43 @@ body {
 		background-color: $light-grayish-blue_empty_slider_bar;
 	}
 
-	&__slider::-webkit-slider-thumb {
+	&__slider::-moz-range-thumb {
 		appearance: none;
 		width: 4rem;
 		height: 4rem;
-		background: url('../images/icon-slider.svg');
+		border: none;
+		border-radius: 50%;
+		background: url('../images/icon-slider.svg') center no-repeat $strong-cyan_slider_backround;
+		box-shadow: 0px 15px 30px -3px $strong-cyan_slider_backround;
 		cursor: pointer;
 	}
 
-	// need to repair my slider thumb
+	&__slider::-moz-range-thumb:active {
+		background-color: $soft-cyan_full_slider_bar;
+		cursor: grabbing;
+	}
+
+	&__slider::-moz-range-track {
+		height: 100%;
+		border-radius: 100vmax;
+		background-color: $light-grayish-blue_empty_slider_bar;
+	}
+
+	&__slider::-moz-range-progress {
+		height: 100%;
+		border-radius: 100vmax;
+		background-color: $soft-cyan_full_slider_bar;
+	}
 
 	&__price {
 		font-size: 3rem;
 		font-weight: 800;
-		display: flex;
-		justify-content: center;
-		gap: 1rem;
 		color: $text_n_CTA_background;
 
 		&--period {
 			font-size: 1.3rem;
 			font-weight: 600;
-			align-self: center;
+			margin-left: 1rem;
 			color: $text;
 		}
 	}
@@ -106,12 +125,13 @@ body {
 .price-switch {
 	display: flex;
 	align-items: center;
-	padding-bottom: 4rem;
+	padding: 0rem 2.5rem 4rem;
 	border-bottom: 3px solid $main_background;
 
 	&__text {
 		display: flex;
 		justify-content: flex-end;
+		align-items: center;
 		flex-grow: 1;
 		flex-basis: 0;
 		font-size: 1.2rem;
@@ -119,6 +139,7 @@ body {
 		color: $text;
 
 		&--discount {
+			text-transform: none;
 			display: inline-block;
 			padding: 0 0.5rem;
 			border-radius: 100vmax;
@@ -220,5 +241,36 @@ footer {
 
 /* MEDIA QUERIES */
 
-@media (min-width: 420px) {
+@media (min-width: 500px) {
+	.slidecontainer {
+		padding: 4rem 5rem 2rem;
+
+		&__pageviews {
+			text-align: left;
+			flex-grow: 1;
+		}
+
+		&__slider {
+			order: 3;
+		}
+
+		&__price {
+			font-size: 3.3rem;
+		}
+	}
+
+	.trial-info {
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 0 5rem;
+
+		&__textbox {
+			margin: 2rem 0 2.5rem;
+			text-align: left;
+		}
+
+		&__button {
+			margin-bottom: 0;
+		}
+	}
 }
