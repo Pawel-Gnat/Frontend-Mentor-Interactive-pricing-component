@@ -38,6 +38,10 @@ I had to insert my arrays data inside text areas while sliding through my range 
 
 Challenge done within 10 hours. I learned what a clamp() is, very useful! I also tried to style my range input in different browsers, but I did it well only on firefox browser. I think it's not supported in all browsers by using css. I had a chance to work with 2 JS data arrays and use a switch statement. 
 
+Useful links:
+1. https://frontlive.pl/blog/css-fluid-typography
+2. https://stackoverflow.com/questions/28283332/style-lower-and-upper-fill-in-html5-range-input
+
 ## Author
 
 - Frontend Mentor - [@Pawel-Gnat](https://www.frontendmentor.io/profile/Pawel-Gnat)
