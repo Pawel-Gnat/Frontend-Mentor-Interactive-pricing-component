@@ -17,8 +17,22 @@ html {
 
 body {
   font-family: 'Manrope', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   min-height: 100vh;
   background: url("../images/bg-pattern.svg") no-repeat #fafbff;
+  background-size: contain;
   margin: auto 2.5rem;
   text-align: center;
 }
@@ -39,7 +53,6 @@ body {
       -ms-flex-align: center;
           align-items: center;
   height: 14.5rem;
-  margin-top: 5.5rem;
   background: url("../images/pattern-circles.svg") center no-repeat;
 }
 
@@ -110,12 +123,72 @@ body {
   cursor: pointer;
 }
 
+.slidecontainer__slider::-webkit-slider-thumb {
+  position: relative;
+  top: -150%;
+  -webkit-appearance: none;
+          appearance: none;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  border-radius: 50%;
+  background: url("../images/icon-slider.svg") center no-repeat #10d5c2;
+  -webkit-box-shadow: 0px 15px 30px -3px #10d5c2;
+          box-shadow: 0px 15px 30px -3px #10d5c2;
+  cursor: pointer;
+}
+
+.slidecontainer__slider::-ms-thumb {
+  appearance: none;
+  width: 4rem;
+  height: 4rem;
+  border: none;
+  border-radius: 50%;
+  background: url("../images/icon-slider.svg") center no-repeat #10d5c2;
+  box-shadow: 0px 15px 30px -3px #10d5c2;
+  cursor: pointer;
+}
+
 .slidecontainer__slider::-moz-range-thumb:active {
   background-color: #a5f3eb;
   cursor: grabbing;
 }
 
+.slidecontainer__slider::-webkit-slider-thumb:active {
+  background-color: #a5f3eb;
+  cursor: -webkit-grabbing;
+}
+
+.slidecontainer__slider::-ms-thumb:active {
+  background-color: #a5f3eb;
+  cursor: -webkit-grabbing;
+}
+
 .slidecontainer__slider::-moz-range-track {
+  height: 100%;
+  border-radius: 100vmax;
+  background-color: #eaeefb;
+}
+
+.slidecontainer__slider::-webkit-slider-runnable-track {
+  height: 100%;
+  border-radius: 100vmax;
+  background-color: #eaeefb;
+}
+
+.slidecontainer__slider:focus::-webkit-slider-runnable-track {
+  height: 100%;
+  border-radius: 100vmax;
+  background-color: #eaeefb;
+}
+
+.slidecontainer__slider::-ms-track {
+  height: 100%;
+  border-radius: 100vmax;
+  background-color: #eaeefb;
+}
+
+.slidecontainer__slider::-ms-fill-lower {
   height: 100%;
   border-radius: 100vmax;
   background-color: #eaeefb;
@@ -125,6 +198,12 @@ body {
   height: 100%;
   border-radius: 100vmax;
   background-color: #a5f3eb;
+}
+
+.slidecontainer__slider::-ms-fill-upper {
+  height: 100%;
+  border-radius: 100vmax;
+  background-color: #10d5c2;
 }
 
 .slidecontainer__price {
